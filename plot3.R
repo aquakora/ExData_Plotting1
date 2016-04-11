@@ -35,7 +35,7 @@ lines(power.readings$date.time, power.readings$sub.metering.2 / 1000,
 lines(power.readings$date.time, power.readings$sub.metering.3 / 1000,
       col = plot.colors[3])
 legend("topright", legend = names(power.readings[6:8]), lwd = 1.5, xjust = 0,
-       col = plot.colors)
+       col = plot.colors, bty = "n")
 
-dev.copy(png, "plot3.png", width = 1050, height = 1050)
+dev.copy(png, "plot3.png", width = 1100, height = 900)
 dev.off()
