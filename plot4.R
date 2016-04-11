@@ -28,10 +28,11 @@ if(!("power.readings" %in% ls())){
 }
 
 par(mfrow = c(2,2))
-source("plot1.R")
 source("plot2.R")
+with(power.readings, plot(date.time, voltage / 1000, ylab = "Voltage",
+                          type = "l"))
 source("plot3.R")
 with(power.readings, plot(date.time, global.reactive.power, type = "l"))
 
-dev.copy(png, "plot4.png")
+dev.copy(png, "plot4.png", width = 1100, height = 1100)
 dev.off()
